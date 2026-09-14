@@ -1,0 +1,8 @@
+{
+  "rewriters": [
+    {
+      "source": "/(.*)",
+      "destination": "/.index.html"
+    }
+  ]
+}

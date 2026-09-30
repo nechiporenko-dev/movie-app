@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const Header = ({ onSearch, searchQuery, showSearch = true }) => {
   return (
-    <header className="flex justify-between items-start max-w-6xl mx-auto sm:px-2 md:px-4 lg:px-6 xl:max-w-7xl">
-      <div className="flex flex-col">
-        <div className="flex items-center gap-2.5 md:gap-4">
+    <header className="max-w-6xl mx-auto py-1 sm:px-2 md:px-4 xl:max-w-7xl">
+      <div className="flex flex-col gap-6 sm:flex-row sm:justify-between sm:items-start">
+        <div className="flex items-center gap-2 sm:items-start md:gap-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -21,40 +21,49 @@ const Header = ({ onSearch, searchQuery, showSearch = true }) => {
             />
           </svg>
 
-          <h1 className="font-serif text-2xl md:text-4xl lg:text-4xl font-extrabold text-white tracking-tight">
-            CineBase
-          </h1>
-        </div>
-        <p
-          className="mt-1 ml-11 text-slate-400 text-xs italic 
-        sm:text-sm md:text-base xl:text-lg"
-        >
-          Discover your next favorite movie
-        </p>
-      </div>
-
-      <div className="flex flex-col gap-2 w-36 sm:flex-row sm:items-center sm:gap-6 sm:w-auto md:gap-8 lg:gap-10 xl:gap-18">
-        <nav
-          className="flex items-center justify-around gap-5 pt-0.5 pr-0.5 text-base font-medium text-slate-300 
-          sm:text-lg sm:gap-10
-          md:gap-12  md:text-xl 
-          lg:pt-1 lg:gap-20"
-        >
-          <Link to="/" className="hover:text-violet-500 transition-colors">
-            Home
-          </Link>
-          <Link
-            to="/movies"
-            className="hover:text-violet-500 transition-colors"
-          >
-            Movies
-          </Link>
-        </nav>
-        {showSearch && (
-          <div className="w-full sm:w-40 sm:mt-1 md:w-44 lg:w-48 lg:mt-2 xl:w-56">
-            <SearchBar onSearch={onSearch} searchQuery={searchQuery} />
+          <div className="flex items-center gap-4 min-w-0 sm:flex-col sm:items-start sm:gap-0">
+            <h1 className="font-serif text-xl mt-0.5 md:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
+              CineBase
+            </h1>
+            <p
+              className=" text-slate-400 text-[12px] ml-3 italic sm:mt-1
+              sm:text-sm md:text-base xl:text-lg"
+            >
+              Discover your next favorite movie
+            </p>
           </div>
-        )}
+        </div>
+
+        <div className="flex flex-row items-center gap-3 ml-3 sm:flex-col sm:items-end sm:justify-start md:gap-6 md:flex-row md:items-center lg:gap-8 lg:mt-3">
+          <nav
+            className="flex items-center gap-6 text-sm font-medium text-slate-300 
+          sm:text-lg sm:gap-8
+          md:gap-8  md:text-xl 
+          lg:gap-12"
+          >
+            <Link to="/" className="hover:text-violet-500 transition-colors">
+              Home
+            </Link>
+            <Link
+              to="/movies"
+              className="hover:text-violet-500 transition-colors"
+            >
+              Movies
+            </Link>
+            <Link
+              to="/favorites"
+              className="hover:text-violet-500 transition-colors"
+            >
+              Favorites
+            </Link>
+          </nav>
+
+          {showSearch && (
+            <div className="w-34  shrink-0 sm:w-48  lg:w-56">
+              <SearchBar onSearch={onSearch} searchQuery={searchQuery} />
+            </div>
+          )}
+        </div>
       </div>
     </header>
   );

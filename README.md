@@ -2,11 +2,11 @@
 CineBase is a modern movie discovery application powered by the TMDB API. Browse popular and top-rated titles, filter by genre, search for films, explore detailed pages with cast and trailers, and build a personal favorites list that persists in the browser.
 
 ## 🔗 Live Demo
-https://movie-app-nechip.vercel.app/
+[https://movie-app-nechip.vercel.app/](https://movie-app-nechip.vercel.app/)
 
 ## 🌟 Key Features
 * **Movie Browsing:**
-  * Home sections: Popular, Top Rated, Now Playing, Upcoming (horizontal scroll).
+  * Home sections: Popular, Top Rated, Now Playing, Upcoming.
   * Genre page with filter chips (Action, Drama, Horror, and more).
 * **Search:**
   * Debounced search requests to the TMDB API.
@@ -21,13 +21,13 @@ https://movie-app-nechip.vercel.app/
 * **UI & UX:**
   * Dark theme with violet accents.
   * Responsive layout (mobile-first, Tailwind CSS).
-  * Client-side routing with React Router (SPA-friendly deploy on Vercel).
+  * Client-side routing with React Router.
 
 ## 🛠️ Tech Stack
 
 * **Frontend:** React (Vite), React Router, Tailwind CSS.
-* **State:** Context API for favorites (`isFavorite`, `toggleFavorite`).
+* **State:**  React hooks, Context API.
 * **Data:** TMDB REST API (fetch, AbortController on details / home requests).
 * **Persistence:** `localStorage` for the favorites list.
-* **Deploy:** Vercel (SPA rewrites for client-side routes).
+* **Deploy:** Vercel.
 

@@ -1,18 +1,33 @@
-# React + Vite
+# 🎬 CineBase — Movie Discovery App
+CineBase is a modern movie discovery application powered by the TMDB API. Browse popular and top-rated titles, filter by genre, search for films, explore detailed pages with cast and trailers, and build a personal favorites list that persists in the browser.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🔗 Live Demo
+https://movie-app-nechip.vercel.app/
 
-Currently, two official plugins are available:
+## 🌟 Key Features
+* **Movie Browsing:**
+  * Home sections: Popular, Top Rated, Now Playing, Upcoming (horizontal scroll).
+  * Genre page with filter chips (Action, Drama, Horror, and more).
+* **Search:**
+  * Debounced search requests to the TMDB API.
+  * Results grid with loading and empty states.
+* **Movie Details:**
+  * Poster, rating, runtime, genres, director, tagline, and overview.
+  * Embedded YouTube trailer, cast list, and recommendations.
+* **Favorites:**
+  * Add or remove movies from cards and the details page.
+  * Dedicated Favorites page.
+  * **localStorage integration:** favorites stay after refresh and browser restart.
+* **UI & UX:**
+  * Dark theme with violet accents.
+  * Responsive layout (mobile-first, Tailwind CSS).
+  * Client-side routing with React Router (SPA-friendly deploy on Vercel).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ Tech Stack
 
-## React Compiler
+* **Frontend:** React (Vite), React Router, Tailwind CSS.
+* **State:** Context API for favorites (`isFavorite`, `toggleFavorite`).
+* **Data:** TMDB REST API (fetch, AbortController on details / home requests).
+* **Persistence:** `localStorage` for the favorites list.
+* **Deploy:** Vercel (SPA rewrites for client-side routes).
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
-
-Note: This will impact Vite dev & build performances.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
